@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>dotnet-ComputerInfoAgent.Service-71B32D23-FFF6-48AF-80EB-59F3211E385F</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ComputerInfo" Version="0.1.0-prerelease" />
+    <PackageReference Include="Hardware.Info" Version="1.0.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="6.0.0-preview.1.21102.12" />
+    <PackageReference Include="System.ServiceProcess.ServiceController" Version="6.0.0-preview.1.21102.12" />
+  </ItemGroup>
+</Project>
