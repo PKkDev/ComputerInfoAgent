@@ -4,10 +4,81 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ComputerInfoAgent.Configuator"
+        xmlns:viewModel="clr-namespace:ComputerInfoAgent.Configuator.MVVM.ViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="23,24,0,0" VerticalAlignment="Top" Height="46" Width="199" Click="button_Click"/>
+        Title="MainWindow"
+        Height="550" Width="900"
+         WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True">
 
-    </Grid>
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+
+    <Border Background="#272537" CornerRadius="20">
+
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="TestApp"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       FontSize="22"
+                       Foreground="White"
+                       FontFamily="Fonts/#Pooppins">
+
+            </TextBlock>
+
+            <StackPanel
+                Grid.Row="1">
+
+                <RadioButton Content="Home"
+                             Height="50"
+                             FontSize="14"
+                             Foreground="White"
+                             IsChecked="True"
+                             Command="{Binding HomeViewCommand}"
+                             Style="{StaticResource MenuButtonTheme}"/>
+
+                <RadioButton Content="Test"
+                             Height="50"
+                             FontSize="14"
+                             Foreground="White"
+                             Command="{Binding TestViewCommand}"
+                             Style="{StaticResource MenuButtonTheme}"/>
+
+            </StackPanel>
+
+            <TextBox Grid.Column="1"
+                     Width="250"
+                     Height="40"
+                     VerticalAlignment="Center"
+                     HorizontalAlignment="Left"
+                     Margin="5"
+                     Text="search"
+                     Style="{StaticResource ModernTextBox}">
+            </TextBox>
+
+            <ContentControl Grid.Row="2"
+                            Grid.Column="2"
+                            Margin="10"
+                            Content="{Binding CurrentView }">
+
+            </ContentControl>
+
+        </Grid>
+
+    </Border>
+
 </Window>
